@@ -8,6 +8,7 @@ monthmodel = tf.keras.models.load_model("models/monthModel.h5", compile=False)
 
 @app.route('/week', methods = ['GET', 'POST'])
 def week():
+    print(request.json['data'])
     data = request.json['data']
     test = np.array(data).astype(np.float32)
     pred = weekmodel.predict(test.reshape(1,7))

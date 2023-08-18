@@ -2,9 +2,12 @@ require('dotenv').config()
 const express = require("express")
 const cookieParser = require("cookie-parser")
 const app = express()
+const cors = require('cors')
+var request = require('request');
 
 app.set('view engine', 'ejs')
 
+app.use(cors())
 app.use(express.static('public'))
 app.use(express.json())
 app.use(express.urlencoded({
@@ -35,5 +38,8 @@ app.get("/transparency",(req,res)=>{
 app.get("/all-emmision",(req,res)=>{
     res.render('allEmmission')
 })
+
+
+
 
 app.listen(PORT, () => console.log(`Server running on port: http://localhost:${PORT}`));

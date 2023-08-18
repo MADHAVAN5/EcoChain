@@ -352,6 +352,8 @@ App = {
                 j += 1
             }
         }
+
+
         var ctxL = document.getElementById("lineChart").getContext('2d');
         var myLineChart = new Chart(ctxL, {
             type: 'line',
@@ -365,6 +367,17 @@ App = {
                     ],
                     borderColor: [
                         'rgba(255, 0, 0, .7)',
+                    ],
+                    borderWidth: 2
+                },
+                {
+                    label: "AI Predicted Visualization",
+                    data: y_data,
+                    backgroundColor: [
+                        'rgba(0, 255, 0, .2)',
+                    ],
+                    borderColor: [
+                        'rgba(0, 255, 0, .7)',
                     ],
                     borderWidth: 2
                 }
