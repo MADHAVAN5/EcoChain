@@ -6,12 +6,14 @@ const app = express();
 const PORT = 5000;
 
 //Routes
-
+const AuthenticationRoute = require('./routes/authRoutes.js')
 
 app.use(express.static('public'))
 app.use(express.urlencoded({
     extended: true
 }))
+app.use('/auth', AuthenticationRoute)
+
 
 
 app.use(bodyParser.json());
@@ -21,5 +23,6 @@ app.set('view engine', 'ejs')
 app.get("/",(req,res)=>{
     res.render('index')
 })
+
 
 app.listen(PORT, () => console.log(`Server running on port: http://localhost:${PORT}`));
