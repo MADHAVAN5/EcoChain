@@ -28,5 +28,8 @@ app.get("/",(req,res)=>{
     res.render('index')
 })
 
+app.get("/transparency",(req,res)=>{
+    res.render('transparent')
+})
 
 app.listen(PORT, () => console.log(`Server running on port: http://localhost:${PORT}`));
