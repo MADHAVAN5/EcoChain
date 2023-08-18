@@ -22,15 +22,11 @@
 
                 <form onSubmit="App.connectWalletRegister(); return false;">
                     <div class="input-field">
-                        <input id="register_mail" type="text" name="email" placeholder="Enter your email" required>
-                        <i class="bi bi-envelope icon"></i>
-                    </div>
-                    <div class="input-field">
                         <select id="register_role" name="" id="">
                             <option value="" hidden>Select Role</option>
-                            <option value="Individual">Individual</option>
-                            <option value="Industry">Industry</option>
-                            <option value="Goverment">Goverment</option>
+                            <option value="individual">Individual</option>
+                            <option value="industry">Industry</option>
+                            <option value="government">Government</option>
                         </select>
                     </div>
                     <div class="input-field">
@@ -39,7 +35,7 @@
                     </div>
 
                     <div class="input-field">
-                        <input id="register_name" type="text" placeholder="Authority(applicable for Goverment & Industry)">
+                        <input id="register_authority" type="text" placeholder="Authority(applicable for Goverment & Industry)">
                         <i class="bi bi-check"></i>
                     </div>
                     
@@ -65,7 +61,7 @@
 
   <!-- Template Main JS File -->
   <script src="/js/main.js"></script>
-  <script src="/js/ethConnect.js"></script>
+  <script src="/js/app.js"></script>
 
 
 </body>

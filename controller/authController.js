@@ -6,9 +6,10 @@ const Register = async (req, res) => {
 }
 
 const Post = async (req, res) => {
+  console.log(req.body)
   res.cookie("walletID", req.body.wallet_id);
-  res.cookie("role", result.role);
-  res.cookie("name", result.name);
+  // res.cookie("role", result.role);
+  // res.cookie("name", result.name);
   res.json("OK")
 }
 
