@@ -5,11 +5,17 @@ const bodyParser = require('body-parser');
 const app = express();
 const PORT = 5000;
 
+app.use(express.static('public'))
+app.use(express.urlencoded({
+    extended: true
+  }))
+
 app.use(bodyParser.json());
+app.set('view engine', 'ejs')
 
 
 app.get("/",(req,res)=>{
-    res.send('Home Page')
+    res.render('index')
 })
 
 app.listen(PORT, () => console.log(`Server running on port: http://localhost:${PORT}`));
