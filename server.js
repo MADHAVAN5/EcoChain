@@ -7,12 +7,14 @@ const PORT = 5000;
 
 //Routes
 const AuthenticationRoute = require('./routes/authRoutes.js')
+const DashboardRoute = require('./routes/dashboardRoute')
 
 app.use(express.static('public'))
 app.use(express.urlencoded({
     extended: true
 }))
 app.use('/auth', AuthenticationRoute)
+app.use('/',DashboardRoute)
 
 
 
@@ -21,7 +23,7 @@ app.set('view engine', 'ejs')
 
 
 app.get("/",(req,res)=>{
-    res.render('marketplace')
+    res.render('index')
 })
 
 
