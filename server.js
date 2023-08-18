@@ -32,4 +32,8 @@ app.get("/transparency",(req,res)=>{
     res.render('transparent')
 })
 
+app.get("/all-emmision",(req,res)=>{
+    res.render('allEmmission')
+})
+
 app.listen(PORT, () => console.log(`Server running on port: http://localhost:${PORT}`));

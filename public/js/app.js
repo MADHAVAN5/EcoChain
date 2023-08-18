@@ -352,6 +352,28 @@ App = {
                 j += 1
             }
         }
+        var ctxL = document.getElementById("lineChart").getContext('2d');
+        var myLineChart = new Chart(ctxL, {
+            type: 'line',
+            data: {
+                labels: x_data,
+                datasets: [{
+                    label: "Industry Carbon Visualization",
+                    data: y_data,
+                    backgroundColor: [
+                        'rgba(225, 0, 0, .2)',
+                    ],
+                    borderColor: [
+                        'rgba(255, 0, 0, .7)',
+                    ],
+                    borderWidth: 2
+                }
+                ]
+            },
+            options: {
+                responsive: true
+            }
+        });
         tabel_body.innerHTML = html
     },
 
