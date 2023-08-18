@@ -8,8 +8,8 @@ const router = express.Router();
 router.get("/login", AuthController.Login)
 router.get("/register", AuthController.Register)
 
-router.post("/login", AuthController.Post)
-router.post("/register", AuthController.Post)
+router.post("/login", AuthController.PostLogin)
+router.post("/register", AuthController.PostRegister)
 
 router.get('/logout',(req,res)=>{
     res.clearCookie("name");
