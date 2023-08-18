@@ -12,7 +12,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #41f150;
+    background-color: #38c23a;
 }
 
 /* width */
@@ -29,7 +29,7 @@ body{
   /* Handle */
   
   ::-webkit-scrollbar-thumb {
-    background: linear-gradient(60deg, #41f150, #2bec55);
+    background: linear-gradient(60deg, #38c23a, #2bec55);
     border-radius: 10px;
   }
   
@@ -66,7 +66,7 @@ body{
     bottom: 0;
     height: 3px;
     width: 30px;
-    background-color: #41f150;
+    background-color: #38c23a;
     border-radius: 25px;
 }
 .form .input-field{
@@ -88,7 +88,7 @@ body{
     transition: all 0.2s ease;
 }
 .input-field input:is(:focus, :valid){
-    border-bottom-color: #41f150;
+    border-bottom-color: #38c23a;
 }
 .input-field i{
     position: absolute;
@@ -99,7 +99,7 @@ body{
     transition: all 0.2s ease;
 }
 .input-field input:is(:focus, :valid) ~ i{
-    color: #41f150;
+    color: #38c23a;
 }
 .input-field i.icon{
     left: 0;
@@ -121,14 +121,14 @@ body{
 }
 .checkbox-content input{
     margin-right: 10px;
-    accent-color: #41f150;
+    accent-color: #38c23a;
 }
 .form .text{
     color: #333;
     font-size: 14px;
 }
 .form a.text{
-    color: #41f150;
+    color: #38c23a;
     text-decoration: none;
 }
 .form a:hover{
@@ -144,12 +144,12 @@ body{
     font-weight: 500;
     letter-spacing: 1px;
     border-radius: 6px;
-    background-color: #41f150;
+    background-color: #38c23a;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 .button input:hover{
-    background-color: #41f150;
+    background-color: #38c23a;
 }
 
 .form .login-signup{
