@@ -260,7 +260,7 @@ section {
 
 .navbar .getstarted,
 .navbar .getstarted:focus {
-  background: #38c23a;
+  background: #3dff07;
   padding: 8px 20px;
   margin-left: 30px;
   border-radius: 4px;
@@ -270,7 +270,22 @@ section {
 .navbar .getstarted:hover,
 .navbar .getstarted:focus:hover {
   color: #fff;
-  background: #5969f3;
+  background: #0a8f31;
+}
+
+.buy,
+.buy:focus {
+  background: #38c23a;
+  padding: 8px 20px;
+  border-radius: 4px;
+  border-color: #38c23a;
+  color: #fff;
+}
+
+.buy:hover,
+.buy:focus:hover {
+  color: #fff;
+  background: #0a8f31;
 }
 
 .navbar .dropdown ul {
