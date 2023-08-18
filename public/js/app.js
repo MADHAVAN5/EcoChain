@@ -53,12 +53,12 @@ App = {
 
         App.setLoading(true);
         await App.user.setUser(data['wallet_id'], data['name'], data['role'], data['authority'], { from: App.account });
-        console.log(await App.user.Users(data['wallet_id']))
+        console.log(data)
         let r = await fetch('/auth/register', { method: 'POST', body: JSON.stringify(data), headers: { 'Content-type': 'application/json; charset=UTF-8' } })
         r = await r.json();
         if (r) {
             alert('success');
-            window.location.href = '/dashboard'
+            window.location.href = `/${data['role']}`
         }
     },
 
@@ -107,13 +107,17 @@ App = {
 
         data = {}
         data['wallet_id'] = accounts[0]
+        await App.user.Users(accounts[0]).then(dataChain=>{
+            data['name'] = dataChain['name']
+            data['role'] = dataChain['privilege']
+
+        })
         var userOrNot = await App.user.checkUserExists(accounts[0])
-        console.log(userOrNot)
         if (userOrNot) {
             let r = await fetch('/auth/login', { method: 'POST', body: JSON.stringify(data), headers: { 'Content-type': 'application/json; charset=UTF-8' } })
             r = await r.json();
             if (r) {
-                window.location.href = '/dashboard'
+                window.location.href = `/${data['role']}`
             }
         }else{
             alert('need to register')

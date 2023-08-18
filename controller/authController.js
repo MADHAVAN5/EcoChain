@@ -5,11 +5,19 @@ const Register = async (req, res) => {
   res.render('register')
 }
 
-const Post = async (req, res) => {
+const PostRegister = async (req, res) => {
   console.log(req.body)
   res.cookie("walletID", req.body.wallet_id);
-  // res.cookie("role", result.role);
-  // res.cookie("name", result.name);
+  res.cookie("role", req.body.role);
+  res.cookie("name", req.body.name);
+  res.json("OK")
+}
+
+const PostLogin = async (req, res) => {
+  console.log(req.body)
+  res.cookie("walletID", req.body.wallet_id);
+  res.cookie("role", req.body.role);
+  res.cookie("name", req.body.name);
   res.json("OK")
 }
 
@@ -17,5 +25,6 @@ const Post = async (req, res) => {
 module.exports = {
   Login,
   Register,
-  Post,
+  PostRegister,
+  PostLogin
 }
