@@ -7,6 +7,10 @@ router.get("/industry",(req,res)=>{
     res.render('marketplace')
 })
 
+router.get("/dashboard",(req,res)=>{
+    res.render('dashboard')
+})
+
 router.get("/mark-co2",(req,res)=>{
     res.render('markCo2')
 })

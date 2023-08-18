@@ -57,8 +57,8 @@ App = {
         let r = await fetch('/auth/register', { method: 'POST', body: JSON.stringify(data), headers: { 'Content-type': 'application/json; charset=UTF-8' } })
         r = await r.json();
         if (r) {
-            alert('success');
-            window.location.href = `/${data['role']}`
+            alert(data['name']+' Welcome to the EcoSystem');
+            window.location.href = `/dashboard`
         }
     },
 
@@ -117,7 +117,7 @@ App = {
             let r = await fetch('/auth/login', { method: 'POST', body: JSON.stringify(data), headers: { 'Content-type': 'application/json; charset=UTF-8' } })
             r = await r.json();
             if (r) {
-                window.location.href = `/${data['role']}`
+                window.location.href = `/dashboard`
             }
         }else{
             alert('need to register')
@@ -161,18 +161,18 @@ App = {
         App.account = accounts[0];
 
         // Co2 Emission Smart Contract
-        const emission = await $.getJSON('/build/contracts/Emission.json')
+        const emission = await $.getJSON('/contracts/Emission.json')
         App.contracts.emission = TruffleContract(emission)
         App.contracts.emission.setProvider(App.web3Provider)
         // Hydrate the smart contract with values from the blockchain
         App.emission = await App.contracts.emission.deployed()
 
         App.setLoading(true)
-        fees = (parseFloat(0.001) * parseFloat(document.getElementById('co2').value)).toString()
+        fees = parseInt(document.getElementById('co2').value)
         await App.emission.createEmissionData(document.getElementById('walletID').value, document.getElementById('co2').value, document.getElementById('emissionDate').value.toString(), fees, { from: App.account })
         await web3.eth.sendTransaction({
             from: accounts[0],
-            to: "0xdcA2C3981037fe440607eFd1C02C360e98318E9e",
+            to: "0x43F47E4C8ea86188dCdB89101D8167D51eF8356A",
             value: web3.utils.toWei((parseFloat(0.001) * parseFloat(document.getElementById('co2').value)).toString(), "ether")
         })
 
@@ -215,7 +215,7 @@ App = {
         App.account = accounts[0];
 
         // Co2 Emission Smart Contract
-        const emission = await $.getJSON('/build/contracts/Emission.json')
+        const emission = await $.getJSON('/contracts/Emission.json')
         App.contracts.emission = TruffleContract(emission)
         App.contracts.emission.setProvider(App.web3Provider)
         // Hydrate the smart contract with values from the blockchain
@@ -249,7 +249,7 @@ App = {
           <td>${task[2]}</td>
           <td>${task[0]}</td>
           <td>${task[1]}</td>
-          <td>${task[3]}</td>
+          <td>${task[3]/1000}</td>
           <td>${cum_emission}</td>
           </tr>`
                 j += 1
@@ -316,7 +316,7 @@ App = {
         App.account = accounts[0];
 
         // Co2 Emission Smart Contract
-        const emission = await $.getJSON('/build/contracts/Emission.json')
+        const emission = await $.getJSON('/contracts/Emission.json')
         App.contracts.emission = TruffleContract(emission)
         App.contracts.emission.setProvider(App.web3Provider)
         // Hydrate the smart contract with values from the blockchain
@@ -346,7 +346,7 @@ App = {
           <td>${task[2]}</td>
           <td>${task[0]}</td>
           <td>${task[1]}</td>
-          <td>${task[3]}</td>
+          <td>${task[3]/1000}</td>
           <td>${cum_emission}</td>
           </tr>`
                 j += 1
@@ -391,7 +391,7 @@ App = {
         App.account = accounts[0];
 
         // Co2 Emission Smart Contract
-        const emission = await $.getJSON('/build/contracts/Emission.json')
+        const emission = await $.getJSON('/contracts/Emission.json')
         App.contracts.emission = TruffleContract(emission)
         App.contracts.emission.setProvider(App.web3Provider)
         // Hydrate the smart contract with values from the blockchain

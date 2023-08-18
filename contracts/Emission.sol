@@ -21,4 +21,8 @@ contract Emission {
         emit EmissionData(_walletID, _carbon, _date, _fees);
     }
 
+    receive() external payable {
+        
+    }
+
 }
