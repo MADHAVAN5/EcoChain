@@ -15,6 +15,13 @@ app.use(express.urlencoded({
 }))
 app.use(cookieParser())
 
+// const { createProxyMiddleware } = require('http-proxy-middleware');
+// const flaskProxy = createProxyMiddleware({
+//     target: 'http://192.168.137.160:3000', // Flask server address
+//     changeOrigin: true,
+//   });
+// app.use('/ai', flaskProxy);
+
 const PORT = 5000;
 
 //Routes

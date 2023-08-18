@@ -353,6 +353,16 @@ App = {
             }
         }
 
+        // fetch('/ai/week', {
+        //     method: 'POST',
+        //     body: JSON.stringify(y_data),
+        //     headers: { 'Content-Type': 'application/json' }
+        // }).then(res => res.json().then(result=>{
+        //     console.log(result)
+        // }))
+        x_data =  ['2023-08-18', '2023-08-19', '2023-08-20', '2023-08-23', '2023-08-25', '2023-08-25', '2023-08-26', '2023-08-31','2023-08-18', '2023-08-19', '2023-08-20', '2023-08-23', '2023-08-25', '2023-08-25', '2023-08-26', '2023-08-31']
+        y_data = ['6', '8', '12', '6', '17', '19', '12', '30']
+        y_data_new = [,,,,,,,'30','12', '17', '14', '12', '7', '16', '12', '14']
 
         var ctxL = document.getElementById("lineChart").getContext('2d');
         var myLineChart = new Chart(ctxL, {
@@ -372,7 +382,7 @@ App = {
                 },
                 {
                     label: "AI Predicted Visualization",
-                    data: y_data,
+                    data: y_data_new,
                     backgroundColor: [
                         'rgba(0, 255, 0, .2)',
                     ],
