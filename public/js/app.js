@@ -50,7 +50,20 @@ App = {
         data['authority'] = document.getElementById('register_authority').value;
         data['wallet_id'] = accounts[0]
         console.log(data);
-
+        if(data['role']  == "government"){
+            const token = await $.getJSON('/contracts/EcoCreditToken.json')
+            App.contracts.token = TruffleContract(token)
+            App.contracts.token.setProvider(App.web3Provider)
+            App.token = await App.contracts.token.deployed()
+            await App.token.grantGovernmentPrivilege(data['wallet_id'], { from: App.account })
+        }
+        if(data['role']  == "industry"){
+            const token = await $.getJSON('/contracts/EcoCreditToken.json')
+            App.contracts.token = TruffleContract(token)
+            App.contracts.token.setProvider(App.web3Provider)
+            App.token = await App.contracts.token.deployed()
+            await App.token.grantIndustryPrivilege(data['wallet_id'], { from: App.account })
+        }
         App.setLoading(true);
         await App.user.setUser(data['wallet_id'], data['name'], data['role'], data['authority'], { from: App.account });
         console.log(data)

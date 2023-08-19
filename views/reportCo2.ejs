@@ -40,7 +40,7 @@
 
       <a href="/dashboard" class="logo d-flex align-items-center">
         <img src="img/logo.png" alt="">
-        <span>Eco Chain</span>
+        <span>Chain</span>
       </a>
 
       <nav id="navbar" class="navbar">
@@ -103,6 +103,12 @@
   <script src="/js/main.js"></script>
   <script src="/js/app.js"></script>
   <script>
+    if (document.getElementById('role').innerHTML == 'government') {
+      document.getElementById('reportLink').href = '/all-emmision'
+      document.getElementById('reportLinkBtn').href = '/all-emmision'
+      // document.getElementById('co2-update').style.display = 'none'
+      // document.getElementById('co2-update-btn').style.display = 'none'
+    }
     cookies = document.cookie.split(';')
     App.FetchEmission();
     cookies = document.cookie.split(';')

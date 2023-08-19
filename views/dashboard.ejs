@@ -40,12 +40,12 @@
 
       <a href="/dashboard" class="logo d-flex align-items-center">
         <img src="img/logo.png" alt="">
-        <span>Eco Chain</span>
+        <span>Chain</span>
       </a>
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto" id="co2-update" href="/mark-co2">Update Co2 Emission</a></li>
+          <li><a class="nav-link scrollto" id="co2-update" href='<%=routeLink %>'><%=title %></a></li>
           <li><a class="nav-link scrollto" id="reportLink" href="/report-co2">Industry Report</a></li>
           <li><a class="nav-link scrollto" href="/dashboard">Dashboard</a></li>
           <li><a class="getstarted scrollto" href="/auth/logout">Logout</a></li>
@@ -111,8 +111,8 @@
     if (document.getElementById('role').innerHTML == 'government') {
       document.getElementById('reportLink').href = '/all-emmision'
       document.getElementById('reportLinkBtn').href = '/all-emmision'
-      document.getElementById('co2-update').style.display = 'none'
-      document.getElementById('co2-update-btn').style.display = 'none'
+      // document.getElementById('co2-update').style.display = 'none'
+      // document.getElementById('co2-update-btn').style.display = 'none'
     }
   </script>
 </body>

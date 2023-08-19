@@ -45,8 +45,8 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto" id="co2-update" href="#team">Update Co2 Emission</a></li>
-          <li><a class="nav-link scrollto" href="/report-co2">Industry Report</a></li>
+          <li><a class="nav-link scrollto" id="co2-update" href="/allowance">Allocate Tokens for Industries</a></li>
+          <li><a class="nav-link scrollto" href="/all-emmision">Industry Report</a></li>
           <li><a class="nav-link scrollto" href="/dashboard">Dashboard</a></li>
           <li><a class="getstarted scrollto" href="/auth/logout">Logout</a></li>
         </ul>
@@ -57,39 +57,53 @@
   </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
-  <section id="hero" class="hero d-flex align-items-center" style="justify-content: center;">
+  <section id="hero" class="hero d-flex align-items-center" >
 
-    <div data-aos="fade-up" data-aos-delay="200" class="container" style="top: 50px;max-width: 540px;">
-      <div class="form">
-        <span class="title">Carbon Foot Print</span>
-
-        <form onSubmit="App.EmissionCommunicate(); return false;">
-          <div class="input-field">
-            <input id="walletID" type="text" name="walletID" placeholder="Enter your Wallet" required readonly>
-            <i class="bi bi-envelope icon"></i>
-          </div>
-          <div class="input-field">
-            <input id="name" type="text" placeholder="Enter Name" required readonly>
-            <i class="bi bi-check"></i>
-          </div>
-          <div>
+    <div class="row" style="justify-content: center; display: flex; width: 100%;">
+      <div data-aos="fade-up" data-aos-delay="200" class="container col-6" style="top: 50px;max-width: 540px;">
+        <div class="form">
+          <span class="title">Initial Allowance</span>
+  
+          <form onSubmit="App.EmissionCommunicate(); return false;">
             <div class="input-field">
-              <input id="emissionDate" type="date" required>
-              <i class="bi bi-list"></i>
+              <input id="walletID" type="text" name="industry" placeholder="Industry" required readonly>
+              <i class="bi bi-envelope icon"></i>
             </div>
             <div class="input-field">
-              <input id="co2" type="text" placeholder="Enter Co2 Emission (in ton)" required>
-              <i class="bi bi-arrow-right"></i>
+              <input id="name" type="text" name="amount" placeholder="Amount" required readonly>
+              <i class="bi bi-check"></i>
             </div>
-          </div>
-
-          <div class="input-field button">
-            <input type="submit" value="Sumbit Co2 Emission">
-          </div>
-
-        </form>
+  
+            <div class="input-field button">
+              <input type="submit" value="Sumbit Co2 Emission">
+            </div>
+  
+          </form>
+        </div>
+      </div>
+      <div data-aos="fade-up" data-aos-delay="200" class="container col-6" style="top: 50px;max-width: 540px;">
+        <div class="form">
+          <span class="title">Set Token Price</span>
+  
+          <form onSubmit="App.EmissionCommunicate(); return false;">
+            <div class="input-field">
+              <input id="walletID" type="text" name="industry" value="Token: 1" placeholder="Industry" required readonly>
+              <i class="bi bi-envelope icon"></i>
+            </div>
+            <div class="input-field">
+              <input id="name" type="text" name="amount" placeholder="Amount" required readonly>
+              <i class="bi bi-check"></i>
+            </div>
+  
+            <div class="input-field button">
+              <input type="submit" value="Sumbit Co2 Emission">
+            </div>
+  
+          </form>
+        </div>
       </div>
     </div>
+    
 
   </section><!-- End Hero -->
   <!-- Vendor JS Files -->
