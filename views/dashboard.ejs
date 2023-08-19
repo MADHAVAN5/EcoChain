@@ -46,6 +46,9 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto" id="co2-update" href='<%=routeLink %>'><%=title %></a></li>
+          <li><a class="nav-link scrollto" id="co2-update" href="/industry">Market Place</a></li>
+
+          <li><a class="nav-link scrollto" id="co2-update" href="/mark-co2">Update Co2 Emission</a></li>
           <li><a class="nav-link scrollto" id="reportLink" href="/report-co2">Industry Report</a></li>
           <li><a class="nav-link scrollto" href="/dashboard">Dashboard</a></li>
           <li><a class="getstarted scrollto" href="/auth/logout">Logout</a></li>
@@ -61,7 +64,7 @@
 
     <div class="container">
       <div class="row">
-        <div class="col-lg-6 d-flex flex-column justify-content-center">
+        <div class="col-lg-12 d-flex flex-column justify-content-center">
           <h1 data-aos="fade-up"><u>Wallet ID</u></h1>
           <h1 data-aos="fade-up" id="walletID"></h1>
           <div style="display: flex;justify-content: space-between;margin-bottom: 64px;margin-top: 24px;">
@@ -72,6 +75,10 @@
             <div>
               <h1 data-aos="fade-up" data-aos-delay="600"><u>Name</u></h1>
               <h1 data-aos="fade-up" data-aos-delay="500" id="name"></h1>
+            </div>
+            <div>
+              <h1 data-aos="fade-up" data-aos-delay="600" id="token-text"><u>ECR Token</u></h1>
+              <h1 data-aos="fade-up" data-aos-delay="500" id="token">48</h1>
             </div>
           </div>
 
@@ -113,6 +120,12 @@
       document.getElementById('reportLinkBtn').href = '/all-emmision'
       // document.getElementById('co2-update').style.display = 'none'
       // document.getElementById('co2-update-btn').style.display = 'none'
+      document.getElementById('co2-update').style.display = 'none'
+      document.getElementById('co2-update-btn').style.display = 'none'
+      document.getElementById('token').style.display = 'none'
+      document.getElementById('token-text').style.display = 'none'
+
+
     }
   </script>
 </body>
