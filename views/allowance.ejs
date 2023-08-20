@@ -64,13 +64,13 @@
         <div class="form">
           <span class="title">Initial Allowance</span>
   
-          <form onSubmit="App.EmissionCommunicate(); return false;">
+          <form onSubmit="App.initAllowance(); return false;">
             <div class="input-field">
-              <input id="walletID" type="text" name="industry" placeholder="Industry" required readonly>
+              <input id="industryWalletID" type="text" name="industry" placeholder="Industry Address" required>
               <i class="bi bi-envelope icon"></i>
             </div>
             <div class="input-field">
-              <input id="name" type="text" name="amount" placeholder="Amount" required readonly>
+              <input id="initTokens" type="text" name="amount" placeholder="Tokens(ECR)" required>
               <i class="bi bi-check"></i>
             </div>
   
@@ -85,13 +85,13 @@
         <div class="form">
           <span class="title">Set Token Price</span>
   
-          <form onSubmit="App.EmissionCommunicate(); return false;">
+          <form onSubmit="App.setTokenPrice(); return false;">
             <div class="input-field">
               <input id="walletID" type="text" name="industry" value="Token: 1" placeholder="Industry" required readonly>
               <i class="bi bi-envelope icon"></i>
             </div>
             <div class="input-field">
-              <input id="name" type="text" name="amount" placeholder="Amount" required readonly>
+              <input id="newPrice" type="text" name="amount" placeholder="Amount" required >
               <i class="bi bi-check"></i>
             </div>
   
